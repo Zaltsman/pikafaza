@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'table_cloth'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
