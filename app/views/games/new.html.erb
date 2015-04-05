@@ -1,0 +1,11 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+
+<%= form_for @game do |form| %>
+	<%= form.label :player_1_name %><br>
+	<%= form.text_field :player_1_name %><br><br>
+	<%= form.label :player_2_name %><br>
+	<%= form.text_field :player_2_name %><br><br>
+	<%= form.submit 'Submit Player Names' %><br>
+<% end %>
+<br>
