@@ -13,9 +13,10 @@ class GamesController < ApplicationController
   	# @game = Game.new(game_params)
   	# @game.user = current_user
 
-	@game = current_user.games.build(game_params)
+	  @game = current_user.games.build(game_params)
 
   	if @game.save
+      session[:current_player] = 2
   		redirect_to game_path(@game)
   	else
   		render :new
@@ -23,28 +24,12 @@ class GamesController < ApplicationController
   end
 
   def show
-    @turn = Turn.new
+    @turn = Turn.new game_id: params[:id]
   end
-
-  def create
-
-  @turn = current_user.turns.build(turn_params)
-
-    if @turn.save
-      redirect_to turns_path(id: @turn.id)
-      else 
-        render :new
-      end
-    end
 
 	private 
 
   def game_params
   	params.require(:game).permit(:player_1_name, :player_2_name, :player_1_number, :player_2_number)
   end
-
-  def turn_params
-    params.require(:turn).permit(:guess)
-  end
-
 end
