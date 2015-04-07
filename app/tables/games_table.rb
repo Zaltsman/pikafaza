@@ -1,6 +1,9 @@
 class GamesTable < TableCloth::Base
   column :player_1_name
+  column :player_1_number
+  
   column :player_2_name
+  column :player_2_number
 
   config.table.class = "table table-bordered"
   

@@ -1,10 +1,14 @@
 <h1>Start a new game</h1>
 <p>
-<%= form_for @game do |form| %>
-	<%= form.label :player_1_name, "Player 1 Name" %><br>
-	<%= form.text_field :player_1_name %><br><br>
-	<%= form.label :player_2_name, "Player 2 Name" %><br>
-	<%= form.text_field :player_2_name %><br><br>
-	<%= form.submit 'Submit Player Names' %><br>
+<%= simple_form_for @game do |f| %>
+	<%= f.label :player_1_name, "Player 1 Name:" %>
+	<%= f.input_field :player_1_name %>
+	<%= f.label :player_1_number, "Player 1 Number:" %>
+	<%= f.password_field :player_1_number, :maxlength => 4 %><br><br>
+	<%= f.label :player_2_name, "Player 2 Name:" %>
+	<%= f.input_field :player_2_name %>
+	<%= f.label :player_2_number, "Player 2 Number:" %>
+	<%= f.password_field :player_2_number, :maxlength => 4 %><br><br>
+	<%= f.submit 'Submit Player Names & Numbers' %><br>
 <% end %>
 </p>

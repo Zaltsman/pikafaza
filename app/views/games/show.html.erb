@@ -1,0 +1,8 @@
+<h1>Time to guess, Player 1</h1>
+<p>
+<%= simple_form_for @turn do |f| %>
+	<%= f.label :guess, "Player 1 Guess:" %>
+	<%= f.input_field :guess %>
+	<%= f.submit 'Submit Guess' %><br>
+<% end %>
+</p>
