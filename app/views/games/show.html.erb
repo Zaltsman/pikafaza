@@ -2,7 +2,7 @@
 <br>
 
 <% @turn.game.turns.each do |turn| %>
-	<p class="text-left"> Player <%=session[:current_player] %> got <%= turn.score[0].length %> Pikas and <%= turn.score[1].length %> Fazas when guessing <%= turn.guess%> </p>
+	<p class="text-left"> You got <%= turn.score[0].length %> Pikas and <%= turn.score[1].length %> Fazas when guessing <%= turn.guess%> </p>
 
 <% end %>
 

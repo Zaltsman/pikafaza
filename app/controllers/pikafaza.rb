@@ -1,1 +1,0 @@
-pikafaza.rb
