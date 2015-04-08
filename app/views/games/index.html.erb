@@ -1,14 +1,17 @@
-<h4>Welcome to PikaFaza, a game of numerical battleship, so to speak.</h4>
+<h4>Welcome to PikaFaza, a game of numerical battleship, so to speak.</h4><br>
+<h5><strong>Objective:</strong> Guess your opponent's 4 digit # before they guess yours.</h5>
+<h5><strong>To Start:</strong>  Both players pick a 4 digit # including 4 unique digits.</h5>
+<h5><strong>Game Flow:</strong>  Competitors go back and forth one guess at-a-time.</h5>
+<h5><strong>Pika:</strong>  Pika means you got the right # in the right spot. ex of 2 Pika: 1234 / 1739 </h5>
+<h5><strong>Faza:</strong>  Faza just means the right number. ex of 2 Faza: 1234 / 8462</h5>
+<h6>Good luck, comrade</h6>
 <br>
 <p> 
 	<a class="btn btn-primary btn-lg" href="/games/new" role="button">Start a new game</a>
 </p>
+
 <br>
-<p>In this section you'll find your past games:</p>
-
-<%= simple_table_for @games, with: GamesTable %>
+<!--  <p>In this section you'll find your past games:</p> */
 
 
-#gradient > .vertical(#333; #000);
-#gradient > .horizontal(#333; #000);
-#gradient > .radial(#333; #000);
+<!--  <%= simple_table_for @games, with: GamesTable %>

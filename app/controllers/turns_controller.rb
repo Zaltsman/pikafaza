@@ -1,7 +1,7 @@
 class TurnsController < ApplicationController
 
   def create
-  	@turn = Turn.new(turn_params)
+  	@turn = Turn.create(turn_params)
  		
 	if session[:current_player] == 2 
 	    if @turn.guess == @turn.game.player_1_number
@@ -59,14 +59,14 @@ class TurnsController < ApplicationController
   	end
 	 
 
-  	if @turn.save
-  		if session[:current_player] == 2
-  		   session[:current_player] = 1	
-  		else
-  			session[:current_player] = 2
-  		end
- 		redirect_to game_path(@turn.game)
-  	end
+ # 	if @turn.save
+ # 		if session[:current_player] == 2
+ # 		   session[:current_player] = 1	
+ # 		else
+ # 			session[:current_player] = 2
+  #		end
+ 	#	redirect_to game_path(@turn.game)
+  	#end
   end
 
   def turn_params

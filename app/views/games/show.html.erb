@@ -1,11 +1,17 @@
 <h3>Your turn, player <%= session[:current_player] %></h3>
 <br>
-<p class="bg-info"> Remember, your objective is to guess your opponent's number before they guess yours. </p>
-<br>
+
+<% @turn.game.turns.each do |turn| %>
+	<p class="text-left"> Player <%=session[:current_player] %> got <%= turn.score[0].length %> Pikas and <%= turn.score[1].length %> Fazas when guessing <%= turn.guess%> </p>
+
+<% end %>
+
 <%= simple_form_for @turn do |f| %>
 	<%= f.label :guess, "Input guess here:" %>
 	<%= f.input_field :guess, { maxlength: 4 } %>
 	<%= f.input :game_id, as: :hidden %>
 	<%= f.button :submit, "Submit Guess" %>
 <% end %>
+<br>
+<p class="bg-info"> Remember, your objective is to guess your opponent's number before they guess yours. </p>
 <br>
