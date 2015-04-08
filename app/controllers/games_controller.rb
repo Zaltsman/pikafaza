@@ -25,6 +25,7 @@ class GamesController < ApplicationController
 
   def show
     @turn = Turn.new game_id: params[:id]
+    @game = Game.find(params[:id])
   end
 
 	private 

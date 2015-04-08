@@ -1,4 +1,4 @@
-<h3>Your turn, player <%= session[:current_player] %></h3>
+<h3>Your turn, <%= session[:current_player] == 1 ? @game.player_1_name : @game.player_2_name %> </h3>
 <br>
 
 <% @turn.game.turns.each do |turn| %>

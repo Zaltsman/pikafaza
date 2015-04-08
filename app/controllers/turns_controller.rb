@@ -27,6 +27,11 @@ class TurnsController < ApplicationController
 
 				@fazas =  @potential_fazas_in_guess & @potential_fazas_in_number
 				redirect_to game_path(@turn.game), notice: "#{@turn.game.player_2_name} got #{@pikas.length} Pikas and #{@fazas.length} Fazas."
+				 if session[:current_player] == 2
+		 		   session[:current_player] = 1	
+		 		else
+		 			session[:current_player] = 2
+		  		end
 	    	return
 	    end
 
@@ -54,17 +59,17 @@ class TurnsController < ApplicationController
 
 				@fazas =  @potential_fazas_in_guess & @potential_fazas_in_number
 				redirect_to game_path(@turn.game), notice: "#{@turn.game.player_1_name} got #{@pikas.length} Pikas and #{@fazas.length} Fazas."
+				 		if session[:current_player] == 2
+ 		   session[:current_player] = 1	
+ 		else
+ 			session[:current_player] = 2
+  		end
 	    	return
 	    end
   	end
 	 
 
  # 	if @turn.save
- # 		if session[:current_player] == 2
- # 		   session[:current_player] = 1	
- # 		else
- # 			session[:current_player] = 2
-  #		end
  	#	redirect_to game_path(@turn.game)
   	#end
   end
