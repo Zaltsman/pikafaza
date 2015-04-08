@@ -1,9 +1,11 @@
-<h1>Player 2 since you're the guest go first.</h1>
+<h1>Player <%= session[:current_player] %> it's your turn!</h1>
+
 <p>
 <%= simple_form_for @turn do |f| %>
-	<%= f.label :guess, "Player 2 Guess:" %>
-	<%= f.input_field :guess, :maxlength => 4 %>
+	<%= f.label :guess, "Input guess here:" %>
+	<%= f.input_field :guess, { maxlength: 4 } %>
 	<%= f.input :game_id, as: :hidden %>
 	<%= f.submit 'Submit Guess' %><br>
 <% end %>
 </p>
+
