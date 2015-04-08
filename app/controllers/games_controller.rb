@@ -17,9 +17,9 @@ class GamesController < ApplicationController
 
   	if @game.save
       session[:current_player] = 1
-  		redirect_to game_path(@game)
-  	else
-  		render :new
+  		redirect_to game_path(@game)  
+    else
+      render :new
   	end
   end
 
