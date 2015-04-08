@@ -1,7 +1,14 @@
-<h1>All Games</h1>
+<h4>Welcome to PikaFaza, a game of numerical battleship, so to speak.</h4>
+<br>
 <p> 
-	<%= link_to "Start a new game", new_game_path %>
+	<a class="btn btn-primary btn-lg" href="/games/new" role="button">Start a new game</a>
 </p>
+<br>
+<p>In this section you'll find your past games:</p>
 
 <%= simple_table_for @games, with: GamesTable %>
 
+
+#gradient > .vertical(#333; #000);
+#gradient > .horizontal(#333; #000);
+#gradient > .radial(#333; #000);

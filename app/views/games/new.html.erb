@@ -1,5 +1,7 @@
-<h1>Start a new game</h1>
-<p>
+<h3>Start a new game</h3>
+<br>
+<p class="bg-info"> Enter your names and pick a 4 digit number (no numbers duplicated). </p>
+<br>
 <%= simple_form_for @game do |f| %>
 	<%= f.label :player_1_name, "Player 1 Name:" %>
 	<%= f.input_field :player_1_name %>
@@ -9,6 +11,6 @@
 	<%= f.input_field :player_2_name %>
 	<%= f.label :player_2_number, "Player 2 Number:" %>
 	<%= f.password_field :player_2_number, :maxlength => 4 %><br><br>
-	<%= f.submit 'Submit Player Names & Numbers' %><br>
+	<%= f.button :submit, "Start Game" %>
 <% end %>
-</p>
+<br>

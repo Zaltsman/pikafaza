@@ -1,11 +1,11 @@
-<h1>Player <%= session[:current_player] %> it's your turn!</h1>
-
-<p>
+<h3>Your turn, player <%= session[:current_player] %></h3>
+<br>
+<p class="bg-info"> Remember, your objective is to guess your opponent's number before they guess yours. </p>
+<br>
 <%= simple_form_for @turn do |f| %>
 	<%= f.label :guess, "Input guess here:" %>
 	<%= f.input_field :guess, { maxlength: 4 } %>
 	<%= f.input :game_id, as: :hidden %>
-	<%= f.submit 'Submit Guess' %><br>
+	<%= f.button :submit, "Submit Guess" %>
 <% end %>
-</p>
-
+<br>

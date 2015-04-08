@@ -16,7 +16,7 @@ class GamesController < ApplicationController
 	  @game = current_user.games.build(game_params)
 
   	if @game.save
-      session[:current_player] = 2
+      session[:current_player] = 1
   		redirect_to game_path(@game)
   	else
   		render :new
